@@ -3,6 +3,7 @@ import "./Auth.scss";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RegisterUser } from "../../Redux/extraReducer";
+import { toast } from "react-toastify";
 
 function Register() {
   const dispatch = useDispatch();
