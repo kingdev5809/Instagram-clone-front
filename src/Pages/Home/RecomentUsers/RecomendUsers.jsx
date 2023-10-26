@@ -3,6 +3,7 @@ import "./RecomendUsers.scss";
 import { defaultUser } from "../../../assets/photos";
 import { useDispatch, useSelector } from "react-redux";
 import { FollowUserApi } from "../../../Redux/extraReducer";
+import { NavLink } from "react-router-dom";
 function RecomendUsers() {
   const dispatch = useDispatch();
 
@@ -95,7 +96,7 @@ function RecomendUsers() {
                 <img src={defaultUser} alt="User Picture" />
               </a>
               <div className="menu__side__suggestion-info">
-                <a href="#">{user.name}</a>
+                <NavLink to={`/profile/${user._id}`}>{user.name}</NavLink>
                 <span>Followed by user1 and 6 others</span>
               </div>
               <button
