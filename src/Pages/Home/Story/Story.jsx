@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 import "./Story.scss";
 import { defaultUser } from "../../../assets/photos";

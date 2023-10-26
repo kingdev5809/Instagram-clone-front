@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
 import "./Searchbar.scss";
 import { defaultUser } from "../../assets/photos";
@@ -24,7 +22,6 @@ function SearchBar({ searchBar, setSearchBar }) {
   useEffect(() => {
     setFollowingUsers(follow);
     dispatch(GetAllUsersApi());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const followHandle = async (user) => {

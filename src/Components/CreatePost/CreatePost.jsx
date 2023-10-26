@@ -59,7 +59,6 @@ function CreatePost({ setVisibleModel }) {
       setLoading(true);
       handleUploadImage();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [imageUpload]);
   const handleOpenFileInput = () => {
     inputRef.current.click();

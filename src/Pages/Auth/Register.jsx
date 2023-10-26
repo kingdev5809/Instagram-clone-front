@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import "./Auth.scss";
 import { NavLink, useNavigate } from "react-router-dom";

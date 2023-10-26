@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useEffect, useState } from "react";
 import "./RecomendUsers.scss";
 import { defaultUser } from "../../../assets/photos";
@@ -16,14 +14,12 @@ function RecomendUsers() {
 
   useEffect(() => {
     setFollowingUsers(follow);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (!follow) {
       localStorage.setItem("follow", JSON.stringify([]));
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -35,7 +31,6 @@ function RecomendUsers() {
       }
     }
     setNotFollowedUsers(filteredUsers);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allUsers]);
 
   const followHandle = async (user) => {

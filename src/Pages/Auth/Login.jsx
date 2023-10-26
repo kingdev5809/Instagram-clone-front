@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -76,7 +75,7 @@ function Login() {
           <ul>
             <li>By signing up, you agree to our</li>
             <li>
-              <a >Terms</a>
+              <a>Terms</a>
             </li>
             <li>
               <a>Data Policy</a>

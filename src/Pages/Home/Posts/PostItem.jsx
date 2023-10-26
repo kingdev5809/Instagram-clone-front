@@ -53,7 +53,6 @@ function PostItem({ post }) {
     if (post.likes.includes(theUser?._id)) {
       setIsLiked(true);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="post-item">
@@ -155,7 +154,7 @@ function PostItem({ post }) {
             ) : (
               ""
             )}
-              
+
             <span onClick={() => setVisibleReactions(!visibleReactions)}>
               <svg
                 aria-label="Emoji"
