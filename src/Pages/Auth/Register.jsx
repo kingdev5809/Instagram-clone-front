@@ -44,6 +44,8 @@ function Register() {
       dispatch(RegisterUser(data)).then((data) => {
         if (data.payload.status) {
           navigate("/");
+          window.location.reload();
+
           return;
         }
         setTheError(data.payload.msg);
