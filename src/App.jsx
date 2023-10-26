@@ -13,6 +13,7 @@ import { ToastContainer } from "react-toastify";
 
 import CreatePost from "./Components/CreatePost/CreatePost";
 import AnotherProfile from "./Components/AnotherProfile/AnotherProfile";
+import Auth from "./Pages/Auth/Auth";
 function App() {
   const [visibleModel, setVisibleModel] = useState(false);
   let userData;
@@ -29,7 +30,7 @@ function App() {
   // ];
 
   const nonAuthRoute = [
-    { id: 1, name: "Login", path: "/", element: <Login /> },
+    { id: 1, name: "Login", path: "/", element: <Auth /> },
     { id: 2, name: "Login", path: "/login", element: <Login /> },
     { id: 3, name: "Register", path: "/register", element: <Register /> },
   ];
