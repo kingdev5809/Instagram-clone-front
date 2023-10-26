@@ -126,7 +126,7 @@ function RecomendUsers() {
   return (
     <section className="side-menu">
       <div className="menu__side__user-profile">
-        <a href="/" target="_blank" className="menu__side__user-avatar">
+        <a href="#" className="menu__side__user-avatar">
           <img src={defaultUser} alt="User Picture" />
         </a>
         <div className="menu__side__user-info">
