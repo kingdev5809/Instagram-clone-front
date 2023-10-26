@@ -30,8 +30,6 @@ function App() {
     },
   ];
 
-
-
   const nonAuthRoute = [
     { id: 1, name: "Login", path: "/", element: <Login /> },
     { id: 2, name: "Login", path: "/login", element: <Login /> },
@@ -47,9 +45,12 @@ function App() {
           </div>
           <div className="main-side">
             <Routes>
-              {authRoute.map((link) => (
+              {/* {authRoute.map((link) => (
                 <Route key={link.id} path={link.path} element={link.element} />
-              ))}
+              ))} */}
+              <Route path={"/"} element={<Home />} />
+              <Route path={"/profile"} element={<Profile />} />
+              <Route path={"/profile/:id"} element={<AnotherProfile />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
