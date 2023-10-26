@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const API = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://insta-clone-server-full.onrender.com",
 });
 export const getAllPosts = createAsyncThunk("getAllPosts", async () => {
   const res = await API.get("post/all");
