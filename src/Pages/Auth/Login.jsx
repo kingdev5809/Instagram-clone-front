@@ -39,6 +39,7 @@ function Login() {
           return;
         }
         navigate("/");
+        window.location.reload();
       });
     }
   };
