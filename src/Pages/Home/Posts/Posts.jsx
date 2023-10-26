@@ -10,6 +10,7 @@ function Posts() {
   const { posts, load } = useSelector((state) => state.Slice);
   useEffect(() => {
     dispatch(getAllPosts());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="posts">

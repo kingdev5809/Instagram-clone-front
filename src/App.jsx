@@ -6,29 +6,27 @@ import Profile from "./Pages/Profile/Profile";
 import Login from "./Pages/Auth/Login";
 import Register from "./Pages/Auth/Register";
 import NotFound from "./Components/NotFound/NotFound";
-import { Route, Routes, useNavigate } from "react-router";
+import { Route, Routes } from "react-router";
 import "./App.scss";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import { ToastContainer } from "react-toastify";
 
 import CreatePost from "./Components/CreatePost/CreatePost";
-import { useSelector } from "react-redux";
 import AnotherProfile from "./Components/AnotherProfile/AnotherProfile";
 function App() {
   const [visibleModel, setVisibleModel] = useState(false);
-  const { appUser, load } = useSelector((state) => state.Slice);
   let userData;
   userData = JSON.parse(localStorage.getItem("userData"));
-  const authRoute = [
-    { id: 1, name: "Home", path: "/", element: <Home /> },
-    { id: 2, name: "Profile", path: "/profile", element: <Profile /> },
-    {
-      id: 3,
-      name: "Profile",
-      path: "/profile/:id",
-      element: <AnotherProfile />,
-    },
-  ];
+  // const authRoute = [
+  //   { id: 1, name: "Home", path: "/", element: <Home /> },
+  //   { id: 2, name: "Profile", path: "/profile", element: <Profile /> },
+  //   {
+  //     id: 3,
+  //     name: "Profile",
+  //     path: "/profile/:id",
+  //     element: <AnotherProfile />,
+  //   },
+  // ];
 
   const nonAuthRoute = [
     { id: 1, name: "Login", path: "/", element: <Login /> },

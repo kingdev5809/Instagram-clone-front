@@ -59,6 +59,7 @@ function CreatePost({ setVisibleModel }) {
       setLoading(true);
       handleUploadImage();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [imageUpload]);
   const handleOpenFileInput = () => {
     inputRef.current.click();
@@ -70,7 +71,7 @@ function CreatePost({ setVisibleModel }) {
           <FontAwesomeIcon icon={faClose} onClick={handleCloseModal} />
         </div>
         {loading ? <h1>Uploading..</h1> : ""}
-        {optionProgres == "first" && !loading ? (
+        {optionProgres === "first" && !loading ? (
           <div className="first-option">
             <div className="header">
               <h2>Create new post</h2>
@@ -112,7 +113,7 @@ function CreatePost({ setVisibleModel }) {
         ) : (
           ""
         )}
-        {optionProgres == "second" ? (
+        {optionProgres === "second" ? (
           <div className="second-option">
             <img src={photoUrl} alt="" />
             <div className="inner">
