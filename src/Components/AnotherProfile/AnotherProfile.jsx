@@ -13,8 +13,7 @@ function AnotherProfile() {
   useEffect(() => {
     dispatch(GetOneUserApi(id));
     dispatch(GetUserPosts(id));
-  }, [id]);
-  console.log(oneUser);
+  }, [dispatch, id]);
   return (
     <div>
       <div className="profile-page">
@@ -68,7 +67,7 @@ function AnotherProfile() {
         <main>
           <div className="container">
             <div className="gallery">
-              {userPosts?.length == 0 ? (
+              {userPosts?.length === 0 ? (
                 <div>
                   <h1>This user have not any posts</h1>
                 </div>

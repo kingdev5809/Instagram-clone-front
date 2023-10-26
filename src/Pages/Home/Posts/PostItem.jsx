@@ -11,7 +11,6 @@ import { useDispatch } from "react-redux";
 import { LikeThePostApi } from "../../../Redux/extraReducer";
 import Comments from "../../../Components/Comments/Comments";
 
-// eslint-disable-next-line react/prop-types
 function PostItem({ post }) {
   const dispatch = useDispatch();
   const [visibleReactions, setVisibleReactions] = useState(false);
@@ -54,6 +53,7 @@ function PostItem({ post }) {
     if (post.likes.includes(theUser?._id)) {
       setIsLiked(true);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="post-item">

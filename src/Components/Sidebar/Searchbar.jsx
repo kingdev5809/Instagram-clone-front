@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
 import "./Searchbar.scss";
 import { defaultUser } from "../../assets/photos";
@@ -9,68 +11,7 @@ function SearchBar({ searchBar, setSearchBar }) {
   const [searchTerm, setSearchTerm] = useState(null);
   const dispatch = useDispatch();
   const { allUsers } = useSelector((state) => state.Slice);
-  const users = [
-    {
-      id: 1,
-      name: "John Doe",
-      email: "john.doe@example.com",
-      fullName: "John David Doe",
-    },
-    {
-      id: 2,
-      name: "Jane Doe",
-      email: "jane.doe@example.com",
-      fullName: "Jane Elizabeth Doe",
-    },
-    {
-      id: 3,
-      name: "Peter Smith",
-      email: "peter.smith@example.com",
-      fullName: "Peter William Smith",
-    },
-    {
-      id: 4,
-      name: "Susan Jones",
-      email: "susan.jones@example.com",
-      fullName: "Susan Mary Jones",
-    },
-    {
-      id: 5,
-      name: "David Brown",
-      email: "david.brown@example.com",
-      fullName: "David Michael Brown",
-    },
-    {
-      id: 6,
-      name: "Elizabeth Green",
-      email: "elizabeth.green@example.com",
-      fullName: "Elizabeth Ann Green",
-    },
-    {
-      id: 7,
-      name: "Michael Williams",
-      email: "michael.williams@example.com",
-      fullName: "Michael John Williams",
-    },
-    {
-      id: 8,
-      name: "Sarah Johnson",
-      email: "sarah.johnson@example.com",
-      fullName: "Sarah Catherine Johnson",
-    },
-    {
-      id: 9,
-      name: "William Turner",
-      email: "william.turner@example.com",
-      fullName: "William James Turner",
-    },
-    {
-      id: 10,
-      name: "Mary Wilson",
-      email: "mary.wilson@example.com",
-      fullName: "Mary Margaret Wilson",
-    },
-  ];
+
   const userData = JSON.parse(localStorage.getItem("userData"));
   let filteredUsers;
   filteredUsers = allUsers?.filter((user) => {
@@ -83,6 +24,7 @@ function SearchBar({ searchBar, setSearchBar }) {
   useEffect(() => {
     setFollowingUsers(follow);
     dispatch(GetAllUsersApi());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const followHandle = async (user) => {

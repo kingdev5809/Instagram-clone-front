@@ -1,7 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import "./Auth.scss";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { RegisterUser } from "../../Redux/extraReducer";
 import { toast } from "react-toastify";
 
@@ -24,10 +25,10 @@ function Register() {
     } else if (email === "") {
       toast.error("Email is required.");
       return false;
-    } else if (name == "") {
+    } else if (name === "") {
       toast.error("Username is required.");
       return false;
-    } else if (fullName == "") {
+    } else if (fullName === "") {
       toast.error("Fullname is required.");
       return false;
     }

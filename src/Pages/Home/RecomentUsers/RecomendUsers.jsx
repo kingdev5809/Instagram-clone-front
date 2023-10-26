@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useEffect, useState } from "react";
 import "./RecomendUsers.scss";
 import { defaultUser } from "../../../assets/photos";
@@ -5,68 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FollowUserApi } from "../../../Redux/extraReducer";
 function RecomendUsers() {
   const dispatch = useDispatch();
-  const users = [
-    {
-      id: 1,
-      name: "John Doe",
-      email: "john.doe@example.com",
-      fullName: "John David Doe",
-    },
-    {
-      id: 2,
-      name: "Jane Doe",
-      email: "jane.doe@example.com",
-      fullName: "Jane Elizabeth Doe",
-    },
-    {
-      id: 3,
-      name: "Peter Smith",
-      email: "peter.smith@example.com",
-      fullName: "Peter William Smith",
-    },
-    {
-      id: 4,
-      name: "Susan Jones",
-      email: "susan.jones@example.com",
-      fullName: "Susan Mary Jones",
-    },
-    {
-      id: 5,
-      name: "David Brown",
-      email: "david.brown@example.com",
-      fullName: "David Michael Brown",
-    },
-    {
-      id: 6,
-      name: "Elizabeth Green",
-      email: "elizabeth.green@example.com",
-      fullName: "Elizabeth Ann Green",
-    },
-    {
-      id: 7,
-      name: "Michael Williams",
-      email: "michael.williams@example.com",
-      fullName: "Michael John Williams",
-    },
-    {
-      id: 8,
-      name: "Sarah Johnson",
-      email: "sarah.johnson@example.com",
-      fullName: "Sarah Catherine Johnson",
-    },
-    {
-      id: 9,
-      name: "William Turner",
-      email: "william.turner@example.com",
-      fullName: "William James Turner",
-    },
-    {
-      id: 10,
-      name: "Mary Wilson",
-      email: "mary.wilson@example.com",
-      fullName: "Mary Margaret Wilson",
-    },
-  ];
+
   const follow = JSON.parse(localStorage.getItem("follow"));
   const userData = JSON.parse(localStorage.getItem("userData"));
   const [notFollowedUsers, setNotFollowedUsers] = useState([]);
@@ -75,23 +16,26 @@ function RecomendUsers() {
 
   useEffect(() => {
     setFollowingUsers(follow);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (!follow) {
       localStorage.setItem("follow", JSON.stringify([]));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     const filteredUsers = [];
 
     for (const user of allUsers) {
-      if (!follow.includes(user._id) && userData._id != user._id) {
+      if (!follow.includes(user._id) && userData._id !== user._id) {
         filteredUsers.push(user);
       }
     }
     setNotFollowedUsers(filteredUsers);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allUsers]);
 
   const followHandle = async (user) => {
@@ -144,7 +88,7 @@ function RecomendUsers() {
           <button>See All</button>
         </div>
         <div className="menu__side__suggestions-content">
-          {notFollowedUsers.length == 0 ? (
+          {notFollowedUsers.length === 0 ? (
             <h2>You have not recomended users</h2>
           ) : (
             ""
