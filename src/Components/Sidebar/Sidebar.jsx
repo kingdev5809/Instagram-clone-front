@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import big_logo from "../../assets/photos/insta_logo.svg.png";
 import small_logo from "../../assets/photos/87390.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-
 import "./Sidebar.scss";
+
 import {
   faBars,
   faCompass,

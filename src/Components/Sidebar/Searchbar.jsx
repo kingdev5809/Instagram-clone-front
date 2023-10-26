@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./SearchBar.scss";
+import "./Searchbar.scss";
 import { defaultUser } from "../../assets/photos";
 import { useDispatch, useSelector } from "react-redux";
 import { FollowUserApi, GetAllUsersApi } from "../../Redux/extraReducer";
