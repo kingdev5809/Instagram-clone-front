@@ -1,0 +1,227 @@
+$color_1: #8e8e8e;
+$color_2: #ffffff;
+$color_3: #8e9096;
+$color_4: #00a0f7;
+$color_5: white;
+$color_6: #00376b;
+$font-family_1: Freight Sans;
+$font-family_2: Neue Helvetica;
+$background-color_1: #0095f6;
+$background-color_2: #fafafa;
+$background-color_3: black;
+$background-color_4: white;
+
+/* header style */
+/* container style*/
+/* option style */
+/* otherapps style */
+/* footer style */
+/* Mobile Styles */
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+  .error {
+    color: red;
+  }
+
+  .header {
+    text-align: center;
+    .logo {
+      margin-bottom: 15px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    button {
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+    > p {
+      font-weight: bold;
+      color: $color_1;
+      font-size: 18px;
+    }
+    > button {
+      width: inherit;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      background-color: $background-color_1;
+      color: $color_2;
+      cursor: pointer;
+    }
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: $color_1;
+      p {
+        padding: 0 20px;
+      }
+      hr {
+        width: 200px;
+      }
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    form {
+      width: inherit;
+      input {
+        border: 1px solid #dbdbdb;
+        background-color: $background-color_2;
+        padding: 10px 5px;
+        margin: 5px 0;
+        outline: none;
+        &:focus {
+        }
+        &:last-of-type {
+          margin-bottom: 10px;
+        }
+      }
+      button {
+        width: inherit;
+        margin-bottom: 20px;
+        padding: 7px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        background-color: $background-color_1;
+        color: $color_2;
+      }
+    }
+    ul {
+      list-style: none;
+      text-align: center;
+      margin-bottom: 10px;
+      li {
+        display: inline;
+        color: $color_3;
+        a {
+          text-decoration: none;
+          font-weight: bold;
+          color: $color_3;
+        }
+      }
+    }
+  }
+}
+input {
+  width: inherit;
+}
+.option {
+  p {
+    > a {
+      text-decoration: none;
+      color: $color_4;
+    }
+  }
+}
+.otherapps {
+  text-align: center;
+  p {
+    margin-bottom: 15px;
+  }
+  > button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: $background-color_3;
+    color: $color_5;
+    padding: 10px;
+    font-size: 18px;
+  }
+}
+.footer {
+  bottom: 0;
+  height: 2.5rem;
+  margin-top: 50px;
+  ul {
+    text-align: center;
+    li {
+      display: inline;
+      margin-right: 5px;
+      a {
+        text-decoration: none;
+        font-size: 12px;
+        color: $color_6;
+      }
+    }
+  }
+  p {
+    margin: 10px 0;
+    text-align: center;
+    color: $color_3;
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  body {
+    font-family: $font-family_1;
+  }
+  .page {
+    width: 250px;
+    margin: auto;
+    background-color: $background-color_2;
+    .header {
+      width: inherit;
+      margin-top: 10px;
+    }
+    .container {
+      width: inherit;
+      input {
+        padding: 10px 5px;
+        margin: 5px 0;
+      }
+    }
+    .footer {
+      width: inherith;
+    }
+  }
+  .option {
+    margin: 80px 0;
+  }
+}
+@media only screen and (min-width: 401px) {
+  body {
+    font-family: $font-family_2;
+  }
+  .page {
+    border: 1px solid #dbdbdb;
+    margin: 40px auto;
+    width: 350px;
+    background-color: $background-color_4;
+    .header {
+      width: 270px;
+      margin-top: 15px;
+    }
+    .container {
+      width: 270px;
+    }
+    .footer {
+      width: 100%;
+    }
+  }
+  .option {
+    margin: 10px auto;
+    border: 1px solid #dbdbdb;
+    background-color: $background-color_4;
+    width: 350px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .otherapps {
+    margin: 20px 0;
+    button {
+      margin-right: 5px;
+      &:after-of-type {
+        margin-right: none;
+      }
+    }
+  }
+}

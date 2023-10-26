@@ -1,0 +1,152 @@
+.story {
+  background-color: transparent;
+  flex-direction: column;
+  display: flex;
+  border: none;
+  cursor: pointer;
+
+  /* this is by me */
+  align-items: center;
+  gap: 6px;
+}
+
+.box__story {
+  width: 100%;
+  background-color: var(--primaries);
+  flex-shrink: 0;
+
+  position: relative;
+  overflow: hidden;
+  .box__story::after {
+    content: "";
+    width: 100%;
+    /* this is by me */
+    position: absolute;
+    background-color: var(--border);
+
+    height: 1px;
+    bottom: 0;
+  }
+  .box__boxStory__content {
+    gap: 16px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .box__boxStory__content::-webkit-scrollbar {
+    /* this is by me */
+    display: none;
+
+    /* For Firefox */
+  }
+  .stories__content {
+    padding: 16px;
+    /* display: none; */
+    &::-webkit-scrollbar {
+      width: 10px;
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.5);
+  }
+  .story--has-story .boxStory__border {
+    /* this is by me */
+    stroke: url(#--story-gradient);
+    strokewidth: 2;
+    /* this  created by student*/
+  }
+  .boxStory__picture {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .boxStory__picture img {
+    width: 56px;
+  }
+  .boxStory__picture::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    /* this  created by student*/
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid var(--img-border);
+    border-radius: 50%;
+  }
+
+  .boxStory__user {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-light);
+    text-transform: lowercase;
+
+    max-width: 72px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  /* this  created by student*/
+  .story--has-story .boxStory__user {
+    color: var(--text-dark);
+  }
+  .boxStory__avatar {
+    position: relative;
+  }
+  .boxStory__border {
+    width: 64px;
+    height: 64px;
+
+    fill: none;
+    stroke: var(--story-border);
+    strokewidth: 1.5;
+    /* this is by me */
+  }
+  .stories__content {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    gap: 16px;
+    position: relative;
+
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  @media (min-width: 620px) {
+    /* this  created by student*/
+    .box__story {
+      /* this  created by student*/
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+    /* this  created by student*/
+    .box__story::after {
+      content: none;
+    }
+
+    /* this  created by student*/
+  }
+}

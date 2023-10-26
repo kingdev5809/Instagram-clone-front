@@ -1,0 +1,313 @@
+/* Side Menu */
+.side-menu {
+  max-width: 290px;
+  position: fixed;
+  left: 60%;
+  top: 10px;
+  transform: translateX(calc(-50% + 322px));
+
+  display: none;
+  flex-direction: column;
+}
+
+.menu__side__user-avatar img {
+  width: 58px;
+}
+.menu__side__user-profile {
+  display: flex;
+  align-items: center;
+
+  margin: 20px 0 22px;
+}
+.menu__side__user-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  margin-right: 12px;
+  flex-shrink: 0;
+
+  overflow: hidden;
+  position: relative;
+}
+
+.menu__side__user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  gap: 4px;
+}
+.menu__side__user-info a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  text-decoration: none;
+
+  text-transform: lowercase;
+
+  max-width: 180px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu__side__user-info span {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-light);
+
+  max-width: 180px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.profile-button__picture::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  border: 1px solid var(--img-border);
+  border-radius: 50%;
+}
+
+.menu__side__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.menu__side__footer-links {
+  display: flex;
+}
+
+.menu__side__footer-list {
+  list-style: none;
+}
+
+.menu__side__footer-item {
+  display: inline-block;
+}
+
+.menu__side__footer-item:not(:last-of-type)::after {
+  content: "\00B7";
+  margin: 0 0 5px;
+}
+
+.menu__side__footer-item,
+.menu__side__footer-link,
+.menu__side__footer-copyright {
+  font-size: 11px;
+
+  font-weight: 400;
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.menu__side__user-avatar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  border: 1px solid var(--img-border);
+  border-radius: 50%;
+}
+.menu__side__suggestions-section {
+  display: flex;
+  flex-direction: column;
+}
+.menu__side__suggestions-header {
+  display: flex;
+  justify-content: space-between;
+  /* this  created by student*/
+}
+.menu__side__suggestions-header h2 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-light);
+}
+.menu__side__suggestions-header button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 500;
+  /* this  created by student*/
+  color: var(--text-dark);
+}
+
+.menu__side__suggestions-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  margin: 16px 0 24px;
+  padding-left: 4px;
+}
+.menu__side__suggestion {
+  display: flex;
+  align-items: center;
+}
+/* this  created by student*/
+.menu__side__suggestion-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+
+  margin-right: 12px;
+  flex-shrink: 0;
+
+  overflow: hidden;
+  /* this  created by student*/
+  position: relative;
+}
+.menu__side__suggestion-avatar img {
+  width: 32px;
+}
+.menu__side__suggestion-avatar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 1px solid var(--img-border);
+  border-radius: 50%;
+}
+/* this  created by student*/
+.menu__side__suggestion-info {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  flex: 1;
+  gap: 2px;
+}
+
+.menu__side__suggestion-info a:hover {
+  /* this  created by student*/
+  text-decoration: underline;
+}
+.menu__side__suggestion-info span {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-light);
+
+  max-width: 180px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media (min-width: 1024px) {
+  /* this  created by student*/
+  .side-menu {
+    display: flex;
+  }
+  /* this  created by student*/
+  .page-homeMain {
+    background-color: var(--secondary);
+  }
+
+  /* this  created by student*/
+  .content {
+    margin: unset;
+  }
+}
+@media (max-width: 767px) {
+  /* Fix post medias indicators bugs on mobile */
+  /* this  created by student*/
+  .thisPost_medias {
+    gap: 1px;
+  }
+  /* this  created by student*/
+  header__buttons--desktop {
+    display: none;
+  }
+}
+.menu__side__user-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 500;
+  /* this  created by student*/
+  color: var(--link);
+
+  flex-shrink: 0;
+}
+.side-menu-suggestionbtn {
+  /* this  created by student*/
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--link);
+
+  flex-shrink: 0;
+}
+
+.menu__side__suggestion-info a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  text-decoration: none;
+  text-transform: lowercase;
+
+  max-width: 180px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* this  created by student*/
+.menu__side__footer-copyright {
+  text-transform: uppercase;
+}
+
+/* Profile Button */
+.profile-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+.profile-button__border {
+  display: none;
+  /* this  created by student*/
+
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--text-dark);
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* this  created by student*/
+/* this  created by student*/
+.profile-button:focus /* this  created by student*/
+  .profile-button__border {
+  display: block;
+}
+/* this  created by student*/
+.profile-button__picture {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+
+  overflow: hidden;
+  position: relative;
+}

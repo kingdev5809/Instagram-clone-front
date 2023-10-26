@@ -1,0 +1,57 @@
+:root {
+  --primaries: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 98%);
+  --border: hsl(0, 0%, 86%);
+
+  --story-border: hsl(0, 0%, 78%);
+
+  --text-dark: hsl(0, 0%, 15%);
+
+  --link: hsl(204, 100%, 48%);
+  --like: hsl(355, 82%, 61%);
+  --nav-height: 44px;
+
+  --text-light: hsl(0, 0%, 60%);
+  --img-border: hsla(0, 0%, 0%, 0.1);
+  --header-height: 44px;
+}
+:root.darkTheme {
+  --secondary: hsl(0, 0%, 2%);
+
+  --story-border: hsl(0, 0%, 44%);
+  --img-border: hsla(0, 0%, 100%, 0.1);
+
+  --text-light: hsl(0, 0%, 60%);
+  --border: hsl(0, 0%, 15%);
+  --primaries: hsl(0, 0%, 0%);
+  --text-dark: hsl(0, 0%, 98%);
+}
+.insta-clone {
+  .sidebar-side {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: white;
+  }
+  .main-side {
+    margin-left: 15%;
+  }
+}
+
+/* Loader */
+
+.loader {
+  width: 5rem;
+  height: 5rem;
+  border: 0.6rem solid #999;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: loader 500ms linear infinite;
+}
+@keyframes loader {
+  to {
+    transform: rotate(360deg);
+  }
+}
