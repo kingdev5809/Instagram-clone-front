@@ -132,45 +132,6 @@ function PostItem({ post }) {
         <div className="text-post">
           <p>{post.content}</p>
         </div>
-        <div className="comment-input">
-          <input
-            type="text"
-            placeholder="Add a comment"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            onClick={() => setVisibleReactions(false)}
-          />
-          <div className="emoji">
-            {visibleReactions ? (
-              <div className="reactions">
-                <span
-                  className="close"
-                  onClick={() => setVisibleReactions(!visibleReactions)}
-                >
-                  <FontAwesomeIcon icon={faClose} />
-                </span>
-                <SlackSelector onSelect={(e) => handleAddReaction(e)} />
-              </div>
-            ) : (
-              ""
-            )}
-
-            <span onClick={() => setVisibleReactions(!visibleReactions)}>
-              <svg
-                aria-label="Emoji"
-                className="x1lliihq x1n2onr6 x1roi4f4"
-                fill="currentColor"
-                height="15"
-                role="img"
-                viewBox="0 0 24 24"
-                width="15"
-              >
-                <title>Emoji</title>
-                <path d="M15.83 10.997a1.167 1.167 0 1 0 1.167 1.167 1.167 1.167 0 0 0-1.167-1.167Zm-6.5 1.167a1.167 1.167 0 1 0-1.166 1.167 1.167 1.167 0 0 0 1.166-1.167Zm5.163 3.24a3.406 3.406 0 0 1-4.982.007 1 1 0 1 0-1.557 1.256 5.397 5.397 0 0 0 8.09 0 1 1 0 0 0-1.55-1.263ZM12 .503a11.5 11.5 0 1 0 11.5 11.5A11.513 11.513 0 0 0 12 .503Zm0 21a9.5 9.5 0 1 1 9.5-9.5 9.51 9.51 0 0 1-9.5 9.5Z"></path>
-              </svg>
-            </span>
-          </div>
-        </div>
       </div>
       {visibleCommentModal ? (
         <Comments post={post} setVisibleCommentModal={setVisibleCommentModal} />
