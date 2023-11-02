@@ -26,7 +26,6 @@ function AnotherProfile() {
   }, [dispatch, id]);
 
   const followHandle = async (user) => {
-    console.log(user);
     if (followedUsers?.includes(user._id)) {
       const filter = followedUsers?.filter((item) => item !== user._id);
       setFollowingUsers(filter);
@@ -55,6 +54,7 @@ function AnotherProfile() {
       );
     }
   };
+  console.log(oneUser);
   return (
     <div>
       <div className="profile-page">
