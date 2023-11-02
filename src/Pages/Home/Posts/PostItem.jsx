@@ -10,6 +10,7 @@ import {
 import { useDispatch } from "react-redux";
 import { LikeThePostApi } from "../../../Redux/extraReducer";
 import Comments from "../../../Components/Comments/Comments";
+import axios from "axios";
 
 function PostItem({ post }) {
   const dispatch = useDispatch();
@@ -18,13 +19,21 @@ function PostItem({ post }) {
   const [inputValue, setInputValue] = useState("");
   const theUser = JSON.parse(localStorage.getItem("userData"));
   const [isLiked, setIsLiked] = useState(false);
+  const [postTheUsers, setPostTheUsers] = useState(null);
 
-  const handleAddReaction = (reaction) => {
-    if (inputValue) {
-      let newValue = inputValue + reaction;
-      setInputValue(newValue);
-    } else {
-      setInputValue(reaction);
+  useEffect(() => {
+    OneUserGetApi(post.user);
+  }, [post]);
+  const OneUserGetApi = async (id) => {
+    console.log();
+    try {
+      const response = await axios.get(
+        `https://insta-clone-server-full.onrender.com/user/${id}`
+      );
+      setPostTheUsers(response.data);
+      return response.data;
+    } catch (error) {
+      throw error;
     }
   };
 
@@ -59,7 +68,7 @@ function PostItem({ post }) {
       <div className="title">
         <div className="user">
           <img src={defaultUser} alt="" />
-          The User
+          {postTheUsers?.name}
         </div>
         <FontAwesomeIcon icon={faEllipsis} />
       </div>
