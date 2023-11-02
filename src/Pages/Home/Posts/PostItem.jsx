@@ -127,7 +127,8 @@ function PostItem({ post }) {
           </span>
         </div>
         <div className="like-count">
-          <img src={defaultUser} alt="" /> <span>1000 likes</span>
+          <img src={defaultUser} alt="" />{" "}
+          <span>{post.likes.length} likes</span>
         </div>
         <div className="text-post">
           <p>{post.content}</p>
