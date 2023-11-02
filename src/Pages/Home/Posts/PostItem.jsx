@@ -14,23 +14,23 @@ import axios from "axios";
 
 function PostItem({ post }) {
   const dispatch = useDispatch();
-  const [visibleReactions, setVisibleReactions] = useState(false);
   const [visibleCommentModal, setVisibleCommentModal] = useState(false);
-  const [inputValue, setInputValue] = useState("");
   const theUser = JSON.parse(localStorage.getItem("userData"));
+  const [postLikeLengt, setpostLikeLengt] = useState("");
   const [isLiked, setIsLiked] = useState(false);
   const [postTheUsers, setPostTheUsers] = useState(null);
 
   useEffect(() => {
     OneUserGetApi(post.user);
+    setpostLikeLengt(post.likes.length);
   }, [post]);
   const OneUserGetApi = async (id) => {
-    console.log();
     try {
       const response = await axios.get(
         `https://insta-clone-server-full.onrender.com/user/${id}`
       );
       setPostTheUsers(response.data);
+
       return response.data;
     } catch (error) {
       throw error;
@@ -41,12 +41,12 @@ function PostItem({ post }) {
     if (isLiked) {
       let likes = post.likes?.filter((item) => item !== theUser._id);
       postLikeToggle(likes);
-
+      setpostLikeLengt(postLikeLengt - 1);
       setIsLiked(false);
     } else {
       let likes = [...post.likes, theUser._id];
       postLikeToggle(likes);
-
+      setpostLikeLengt(postLikeLengt + 1);
       setIsLiked(true);
     }
   };
@@ -61,6 +61,7 @@ function PostItem({ post }) {
   useEffect(() => {
     if (post.likes.includes(theUser?._id)) {
       setIsLiked(true);
+      console.log("tre");
     }
   }, []);
   return (
@@ -137,7 +138,7 @@ function PostItem({ post }) {
         </div>
         <div className="like-count">
           <img src={defaultUser} alt="" />
-          <span>{post.likes.length} likes</span>
+          <span>{postLikeLengt} likes</span>
         </div>
         <div className="text-post">
           <p>{post.content}</p>
