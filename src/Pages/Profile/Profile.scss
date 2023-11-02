@@ -96,6 +96,10 @@ img {
   border-radius: 0.3rem;
   padding: 0 2.4rem;
   margin-left: 2rem;
+  &.follow {
+    background-color: blue;
+    color: white;
+  }
 }
 
 .profile-settings-btn {

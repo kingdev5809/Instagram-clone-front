@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { defaultUser } from "../../assets/photos";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { GetOneUserApi, GetUserPosts } from "../../Redux/extraReducer";
+import {
+  FollowUserApi,
+  GetOneUserApi,
+  GetUserPosts,
+} from "../../Redux/extraReducer";
 import { useParams } from "react-router";
 
 function AnotherProfile() {
   const { userPosts, oneUser } = useSelector((state) => state.Slice);
+  const [followedUsers, setFollowingUsers] = useState([]);
+
+  let follow;
+  follow = JSON.parse(localStorage.getItem("follow"));
+  let userData;
+  userData = JSON.parse(localStorage.getItem("userData"));
   const dispatch = useDispatch();
   const params = useParams();
   const id = params.id;
@@ -14,6 +24,37 @@ function AnotherProfile() {
     dispatch(GetOneUserApi(id));
     dispatch(GetUserPosts(id));
   }, [dispatch, id]);
+
+  const followHandle = async (user) => {
+    console.log(user);
+    if (followedUsers?.includes(user._id)) {
+      const filter = followedUsers?.filter((item) => item !== user._id);
+      setFollowingUsers(filter);
+      localStorage.setItem("follow", JSON.stringify(filter));
+      dispatch(FollowUserApi((userData._id, filter)));
+      return;
+    }
+    if (!follow) {
+      setFollowingUsers([user?._id]);
+      dispatch(
+        FollowUserApi({ id: userData._id, followingUsers: [user?._id] })
+      );
+
+      localStorage.setItem("follow", JSON.stringify([user?._id]));
+    } else {
+      setFollowingUsers([...follow, user?._id]);
+      dispatch(
+        FollowUserApi({
+          id: userData._id,
+          followingUsers: [...followedUsers, user?._id],
+        })
+      );
+      localStorage.setItem(
+        "follow",
+        JSON.stringify([...followedUsers, user?._id])
+      );
+    }
+  };
   return (
     <div>
       <div className="profile-page">
@@ -26,6 +67,13 @@ function AnotherProfile() {
 
               <div className="profile-user-settings">
                 <h1 className="profile-user-name">{oneUser?.name}</h1>
+                <button
+                  className="btn profile-edit-btn follow"
+                  onClick={() => followHandle(oneUser)}
+                  // onClick={handleShowEditModal}
+                >
+                  {follow.includes(oneUser._id) ? "Followed" : "Follow"}
+                </button>
 
                 <button
                   className="btn profile-settings-btn"
